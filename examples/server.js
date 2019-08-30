@@ -36,6 +36,8 @@ registerErrorRouter()
 
 registerExtendRouter()
 
+registerInterceptorRouter()
+
 // 调用函数
 function registerSimpleRouter () {
   router.get('/simple/get', function(req, res) {
@@ -134,6 +136,13 @@ function registerExtendRouter () {
   })
 }
 
+function registerInterceptorRouter () {
+  router.get('/interceptor/get', function(req, res) {
+    res.json({
+      msg: 'how are you'
+    })
+  })
+}
 app.use(router)
 
 const port = process.env.PORT || 8082
